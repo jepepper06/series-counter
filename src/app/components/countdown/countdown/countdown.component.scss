@@ -2,15 +2,53 @@
     &:focus{
       border: none;
       outline: none;
+      background-color: #bbb;
+      transform: scale(1.05);
+      transition: 0.3s;
     }
     border-radius: 2px;
     border: 0;
     background-color: #ddd;
     height: 3em;
+    text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.clock-form-button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  height: 40px;
+  width: 90px;
+  background: #94c6fc;
+  border-radius: 10px;
+  &:hover{
+    background: #65a0de;
   }
-  .clock{
-    margin: 1.5em;
-  }
-  @media (min-width: 320px) {
-
-  }
+}
+.counter{
+  font-size: 60px;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.clock-form{
+  margin-left: auto;
+  margin-right: auto;
+}
+.clock{
+  padding-top: 17px;
+  text-align: center;
+  width: 100%;
+  font-family: 'Roboto',sans-serif;
+}
+@media (min-width: 320px) {
+}

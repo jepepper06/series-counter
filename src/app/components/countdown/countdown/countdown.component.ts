@@ -76,10 +76,12 @@ export class CountdownComponent implements OnInit {
     let step: number = 0;
     let source = interval(1000);
     const playingAudioLogic = () => {
-      this.resetClockForm();
+      if(firstInterval > 0 || secondInterval > 0) this.resetClockForm();
+      this.setErrorMessage('');
       secondsCounted+=1;
       if(firstInterval == 0 || secondInterval == 0){
         this.setErrorMessage('No se puede inicializar una cuenta con 0');
+        this.subscription.unsubscribe();
         return;
       }
       if(secondsCounted <= firstInterval){
