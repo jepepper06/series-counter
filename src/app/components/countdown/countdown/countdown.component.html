@@ -46,7 +46,8 @@
     <input [disabled]="clockForm.invalid" type="submit" value="submit" class="clock-form-button">
 
   </form>
-  <img *ngIf="clockForm.invalid"  style="width: 10em;" src="../../../assets/patheticCat.bmp" alt="">
+
   <p class="counter">{{ minutes }}:{{ seconds }}</p>
+  <p *ngIf="clockForm.invalid" style="color: red;">Hay datos erroneos en el formulario</p>
   <p>{{errorMessage}}</p>
 </div>
