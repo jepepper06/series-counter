@@ -1,53 +1,49 @@
 <div class="clock" >
   <form
   action=""
-  class="clock-form"
+  class="clock-form flex flex-row flex-wrap justify-center w-4/5"
   [formGroup]="clockForm"
   (ngSubmit)="startCounting()">
-    <label for="fMinutes">Firts interval </label>
+    <div class="basis-full text-center py-2">
+      <label for="fMinutes" class="">Firts interval </label>
+    </div>
+    <div class="basis-1/2">
+      <input type="number" min="0" name="fMinutes" formControlName="fMinutes" class="clock-form--input block mr-0 ml-auto w-auto ">
+    </div>
+    <div class="basis-1/2">
+      :
+      <input type="number" min="0" max="59" formControlName="fSeconds" class="clock-form--input inline-block mx-auto w-auto">
+    </div>
+
     <br>
-    <input
-    type="number"
-    min="0"
-    name="fMinutes"
-    formControlName="fMinutes"
-    id=""
-    class="clock-form--input">
-    :
-    <input
-    type="number" min="0" max="59"
-    formControlName="fSeconds"
-    id=""
-    class="clock-form--input">
+    <div class="basis-full text-center py-2">
+      <label for="sMinutes">Second Interval</label>
+    </div>
+    <div class="basis-1/2">
+      <input type="number" min="0" name="sMinutes" formControlName="sMinutes" class="clock-form--input block mr-0 ml-auto">
+    </div>
+    <div class="basis-1/2">
+      :
+      <input type="number" min="0" max="59" formControlName="sSeconds" class="clock-form--input">
+    </div>
+
     <br>
-    <label for="sMinutes">Second Interval</label>
+
+    <div class="basis-full text-center py-2">
+      <label for="nCycles">Number of Cycle</label>
+    </div>
+    <div class="basis-1/2  text-center">
+      <input type="number" formControlName="cycles" name="nCycles" min="1" class="clock-form--input">
+    </div>
     <br>
-    <input
-    type="number" min="0"
-    name="sMinutes"
-    formControlName="sMinutes"
-    id=""
-    class="clock-form--input">
-    :
-    <input
-    type="number" min="0" max="59"
-    formControlName="sSeconds"
-    id=""
-    class="clock-form--input">
-    <br>
-    <label for="nCycles">Number of Cycle</label>
-    <br>
-    <input
-    type="number"
-    formControlName="cycles"
-    name="nCycles" min="1"
-    class="clock-form--input">
-    <br>
-    <input [disabled]="clockForm.invalid" type="submit" value="submit" class="clock-form-button">
+    <div class="basis-full">
+      <input [disabled]="clockForm.invalid" type="submit" value="submit" class="clock-form-button">
+    </div>
 
   </form>
-
-  <p class="counter">{{ minutes }}:{{ seconds }}</p>
+  <div class="block text-center">
+    <p class="counter">{{ minutes }}:{{ seconds }}</p>
+  </div>
   <p *ngIf="clockForm.invalid" style="color: red;">Hay datos erroneos en el formulario</p>
   <p>{{errorMessage}}</p>
 </div>
