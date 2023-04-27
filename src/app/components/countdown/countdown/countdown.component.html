@@ -1,41 +1,35 @@
 <div class="clock" >
   <form
   action=""
-  class="clock-form flex flex-row flex-wrap justify-center w-4/5"
+  class="clock-form flex flex-row flex-wrap w-4/5"
   [formGroup]="clockForm"
   (ngSubmit)="startCounting()">
     <div class="basis-full text-center py-2">
       <label for="fMinutes" class="">Firts interval </label>
     </div>
-    <div class="basis-1/2">
+    <div class="w-1/2">
       <input type="number" min="0" name="fMinutes" formControlName="fMinutes" class="clock-form--input block mr-0 ml-auto w-auto ">
     </div>
-    <div class="basis-1/2">
-      :
+    <div class="w-1/2">
+      <div class="inline">:</div>
       <input type="number" min="0" max="59" formControlName="fSeconds" class="clock-form--input inline-block mx-auto w-auto">
     </div>
-
-    <br>
     <div class="basis-full text-center py-2">
       <label for="sMinutes">Second Interval</label>
     </div>
-    <div class="basis-1/2">
-      <input type="number" min="0" name="sMinutes" formControlName="sMinutes" class="clock-form--input block mr-0 ml-auto">
+    <div class="w-1/2">
+      <input type="number" min="0" name="sMinutes" formControlName="sMinutes" class="clock-form--input block mr-0 ml-auto w-auto">
     </div>
-    <div class="basis-1/2">
-      :
+    <div class="w-1/2">
+      <div class="inline">:</div>
       <input type="number" min="0" max="59" formControlName="sSeconds" class="clock-form--input">
     </div>
-
-    <br>
-
     <div class="basis-full text-center py-2">
       <label for="nCycles">Number of Cycle</label>
     </div>
-    <div class="basis-1/2  text-center">
+    <div class="w-full  text-center">
       <input type="number" formControlName="cycles" name="nCycles" min="1" class="clock-form--input">
     </div>
-    <br>
     <div class="basis-full">
       <input [disabled]="clockForm.invalid" type="submit" value="submit" class="clock-form-button">
     </div>
